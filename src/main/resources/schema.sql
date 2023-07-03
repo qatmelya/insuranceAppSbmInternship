@@ -8,10 +8,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-DROP TABLE IF EXISTS [dbo].[Customer]
+DROP TABLE IF EXISTS [dbo].[Customers]
 GO
 
-CREATE TABLE [dbo].[Customer](
+CREATE TABLE [dbo].[Customers](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [nvarchar](50) NULL,
 	[LastName] [nvarchar](50) NULL,
