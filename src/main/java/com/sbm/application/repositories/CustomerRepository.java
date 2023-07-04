@@ -3,7 +3,7 @@ package com.sbm.application.repositories;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
-import com.sbm.application.entities.Customer;
+import com.sbm.application.entities.concretes.Customer;
 
 import reactor.core.publisher.Flux;
 
