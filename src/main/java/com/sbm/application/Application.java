@@ -22,9 +22,10 @@ public class Application {
 	
 	@Bean
     ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
-
+		log.info("Database Connnection initializing...");
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
         initializer.setConnectionFactory(connectionFactory);
+		log.info("Database Connnection initialized!");
         return initializer;
     }
 	
