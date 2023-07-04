@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [InsuranceDB]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Database [InsuranceDB]    Script Date: 4.07.2023 16:52:37 ******/
 CREATE DATABASE [InsuranceDB]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [InsuranceDB] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEAN
 GO
 USE [InsuranceDB]
 GO
-/****** Object:  Table [dbo].[CarBrands]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarBrands]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ GO
 CREATE TABLE [dbo].[CarBrands](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_Brands] PRIMARY KEY CLUSTERED 
 (
@@ -98,7 +98,7 @@ CREATE TABLE [dbo].[CarBrands](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarEngines]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarEngines]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +107,7 @@ CREATE TABLE [dbo].[CarEngines](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[CarFuelTypeId] [int] NULL,
 	[CarEngineSizeId] [int] NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_CarEngines] PRIMARY KEY CLUSTERED 
 (
@@ -115,7 +115,7 @@ CREATE TABLE [dbo].[CarEngines](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarEngineSizes]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarEngineSizes]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -123,7 +123,7 @@ GO
 CREATE TABLE [dbo].[CarEngineSizes](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Size] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_EngineSizes] PRIMARY KEY CLUSTERED 
 (
@@ -131,7 +131,7 @@ CREATE TABLE [dbo].[CarEngineSizes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarFuelTypes]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarFuelTypes]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -139,7 +139,7 @@ GO
 CREATE TABLE [dbo].[CarFuelTypes](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_CarFuelTypes] PRIMARY KEY CLUSTERED 
 (
@@ -147,7 +147,7 @@ CREATE TABLE [dbo].[CarFuelTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarModels]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarModels]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -157,7 +157,7 @@ CREATE TABLE [dbo].[CarModels](
 	[BrandId] [int] NULL,
 	[CarTypeId] [int] NULL,
 	[Name] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_CarModels] PRIMARY KEY CLUSTERED 
 (
@@ -165,7 +165,7 @@ CREATE TABLE [dbo].[CarModels](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarPackages]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarPackages]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -176,7 +176,7 @@ CREATE TABLE [dbo].[CarPackages](
 	[CarEngineId] [int] NULL,
 	[CarTypeId] [int] NULL,
 	[Year] [nvarchar](4) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_CarPackages] PRIMARY KEY CLUSTERED 
 (
@@ -184,7 +184,7 @@ CREATE TABLE [dbo].[CarPackages](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarPackageTypes]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarPackageTypes]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -192,7 +192,7 @@ GO
 CREATE TABLE [dbo].[CarPackageTypes](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_CarPackageTypes] PRIMARY KEY CLUSTERED 
 (
@@ -200,7 +200,7 @@ CREATE TABLE [dbo].[CarPackageTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cars]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[Cars]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,7 +213,7 @@ CREATE TABLE [dbo].[Cars](
 	[IsDamaged] [bit] NULL,
 	[EstimatedValue] [decimal](18, 4) NULL,
 	[LicensePlate] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_Cars] PRIMARY KEY CLUSTERED 
 (
@@ -221,7 +221,7 @@ CREATE TABLE [dbo].[Cars](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarTypes]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[CarTypes]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -229,7 +229,7 @@ GO
 CREATE TABLE [dbo].[CarTypes](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_CarTypes] PRIMARY KEY CLUSTERED 
 (
@@ -237,7 +237,7 @@ CREATE TABLE [dbo].[CarTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cities]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[Cities]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -246,7 +246,7 @@ CREATE TABLE [dbo].[Cities](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
 	[LicensePlateCode] [nvarchar](2) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_Cities] PRIMARY KEY CLUSTERED 
 (
@@ -254,7 +254,7 @@ CREATE TABLE [dbo].[Cities](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customers]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[Customers]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -269,7 +269,7 @@ CREATE TABLE [dbo].[Customers](
 	[PhoneNumber] [nvarchar](13) NULL,
 	[BirthDate] [datetime] NULL,
 	[LicenseObtainedAt] [datetime] NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
 (
@@ -277,7 +277,7 @@ CREATE TABLE [dbo].[Customers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InsuranceCompanies]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[InsuranceCompanies]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -291,7 +291,7 @@ CREATE TABLE [dbo].[InsuranceCompanies](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Insurances]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[Insurances]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -307,7 +307,7 @@ CREATE TABLE [dbo].[Insurances](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InsuranceTypes]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[InsuranceTypes]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -322,7 +322,7 @@ CREATE TABLE [dbo].[InsuranceTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PriceEstimations]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[PriceEstimations]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -339,7 +339,7 @@ CREATE TABLE [dbo].[PriceEstimations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Professions]    Script Date: 4.07.2023 15:12:36 ******/
+/****** Object:  Table [dbo].[Professions]    Script Date: 4.07.2023 16:52:37 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -347,7 +347,7 @@ GO
 CREATE TABLE [dbo].[Professions](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[ValueFactor] [decimal](18, 17) NULL,
+	[ValueFactor] [decimal](18, 4) NULL,
 	[ScaleFactor] [decimal](18, 17) NULL,
  CONSTRAINT [PK_Profession] PRIMARY KEY CLUSTERED 
 (
