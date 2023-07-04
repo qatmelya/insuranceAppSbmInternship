@@ -2,21 +2,15 @@ package com.sbm.application.entities.concretes;
 
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("InsuranceCompanies")
-public class InsuranceCompany {
+import com.sbm.application.entities.abstracts.Entity;
 
-	private int id;
+@Table("InsuranceCompanies")
+public class InsuranceCompany extends Entity{
+
 	private String name;
 	public InsuranceCompany(int id, String name) {
-		super();
-		this.id = id;
+		super(id);
 		this.name = name;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getName() {
 		return name;

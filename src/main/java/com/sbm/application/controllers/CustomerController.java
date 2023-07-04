@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sbm.application.Application;
 import com.sbm.application.entities.concretes.Customer;
-import com.sbm.application.repositories.CustomerRepository;
+import com.sbm.application.repositories.concretes.CustomerRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
