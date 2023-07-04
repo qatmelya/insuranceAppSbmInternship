@@ -1,5 +1,6 @@
 package com.sbm.application.entities.concretes;
 
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import com.sbm.application.entities.abstracts.Entity;
@@ -7,9 +8,16 @@ import com.sbm.application.entities.abstracts.Entity;
 @Table("Insurances")
 public class Insurance extends Entity {
 
+	@Column("companyId")
 	private int companyId;
+	@Column("insuranceTypeId")
 	private int insuranceTypeId;
+	@Column("basePrice")
 	private double basePrice;
+
+	public Insurance() {
+		super(0);
+	}
 
 	public Insurance(int id, int companyId, int insuranceTypeId, double basePrice) {
 		super(id);

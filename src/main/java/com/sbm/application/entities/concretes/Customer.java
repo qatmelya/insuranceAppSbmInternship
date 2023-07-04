@@ -2,6 +2,7 @@ package com.sbm.application.entities.concretes;
 
 import java.sql.Timestamp;
 
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import com.sbm.application.entities.abstracts.Parameter;
@@ -9,30 +10,31 @@ import com.sbm.application.entities.abstracts.Parameter;
 @Table("Customers")
 public class Customer extends Parameter {
 
-    
-    private int professionId;
-    
-    private int cityOfResidenceId;
+	@Column("professionId")
+	private int professionId;
+	@Column("cityOfResidenceId")
+	private int cityOfResidenceId;
+	@Column("firstName")
+	private String firstName;
+	@Column("lastName")
+	private String lastName;
+	@Column("tc")
+	private String tc;
+	@Column("phoneNumber")
+	private String phoneNumber;
+	@Column("birthDate")
+	private Timestamp birthDate;
+	@Column("licenseObtainedAt")
+	private Timestamp licenseObtainedAt;
 
-    private String firstName;
+	public Customer() {
+		super(0, 0, 0);
+		// Empty constructor is required to parse the json body from request
+	}
 
-    private String lastName;
-    
-    private String tc;
-    
-    private String phoneNumber;
-    
-    private Timestamp birthDate;
-    
-    private Timestamp licenseObtainedAt;
-
-    public Customer() {
-    	super(0,0, 0);
-    	//Empty constructor is required to parse the json body from request
-    }
-
-    public Customer(double valueFactor, double scaleFactor, int id, int professionId, int cityOfResidenceId, String firstName,
-			String lastName, String tc, String phoneNumber, Timestamp birthDate, Timestamp licenseObtainedAt) {
+	public Customer(double valueFactor, double scaleFactor, int id, int professionId, int cityOfResidenceId,
+			String firstName, String lastName, String tc, String phoneNumber, Timestamp birthDate,
+			Timestamp licenseObtainedAt) {
 		super(id, scaleFactor, valueFactor);
 		this.professionId = professionId;
 		this.cityOfResidenceId = cityOfResidenceId;
@@ -44,19 +46,23 @@ public class Customer extends Parameter {
 		this.licenseObtainedAt = licenseObtainedAt;
 	}
 
-    public String getFirstName() {
-        return this.firstName;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getLastName() {
-        return this.lastName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    public int getProfessionId() {
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return this.lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getProfessionId() {
 		return professionId;
 	}
 
@@ -108,8 +114,8 @@ public class Customer extends Parameter {
 	public String toString() {
 		return String.format(
 				"Customer [id=%s, professionId=%s, cityOfResidenceId=%s, firstName=%s, lastName=%s, tc=%s, phoneNumber=%s, birthDate=%s, licenseObainedAt=%s, getScaleFactor()=%s, getValueFactor()=%s]",
-				this.getId(), professionId, cityOfResidenceId, firstName, lastName, tc, phoneNumber, birthDate, licenseObtainedAt,
-				this.getScaleFactor(),this.getValueFactor());
+				this.getId(), professionId, cityOfResidenceId, firstName, lastName, tc, phoneNumber, birthDate,
+				licenseObtainedAt, this.getScaleFactor(), this.getValueFactor());
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.sbm.application.entities.concretes;
 
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import com.sbm.application.entities.abstracts.Parameter;
@@ -7,12 +8,22 @@ import com.sbm.application.entities.abstracts.Parameter;
 @Table("Cars")
 public class Car extends Parameter {
 
+	@Column("customerId")
 	private int customerId;
+	@Column("cityId")
 	private int cityId;
+	@Column("carPackageId")
 	private int carPackageId;
+	@Column("isDamaged")
 	private boolean isDamaged;
+	@Column("estimatedValue")
 	private double estimatedValue;
+	@Column("licensePlate")
 	private String licensePlate;
+
+	public Car() {
+		super(0, 0, 0);
+	}
 
 	public Car(double scaleFactor, double valueFactor, int id, int customerId, int cityId, int carPackageId,
 			boolean isDamaged, double estimatedValue, String licensePlate) {
