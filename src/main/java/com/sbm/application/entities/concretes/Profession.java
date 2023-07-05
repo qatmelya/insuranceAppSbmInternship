@@ -30,7 +30,7 @@ public class Profession extends Parameter {
 
 	@Override
 	public String toString() {
-		return String.format("Profession [name=%s, scaleFactor=%s, valueFactor=%s, id=%s]", name, getScaleFactor(),
+		return String.format("Profession [\nname=%s, \nscaleFactor=%s, \nvalueFactor=%s, \nid=%s]\n", name, getScaleFactor(),
 				getValueFactor(), getId());
 	}
 }
