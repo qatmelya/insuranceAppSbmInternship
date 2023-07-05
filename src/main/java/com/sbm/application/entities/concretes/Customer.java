@@ -102,12 +102,12 @@ public class Customer extends Parameter {
 		this.birthDate = birthDate;
 	}
 
-	public Timestamp getLicenseObainedAt() {
+	public Timestamp getLicenseObtainedAt() {
 		return licenseObtainedAt;
 	}
 
-	public void setLicenseObainedAt(Timestamp licenseObainedAt) {
-		this.licenseObtainedAt = licenseObainedAt;
+	public void setLicenseObtainedAt(Timestamp licenseObtainedAt) {
+		this.licenseObtainedAt = licenseObtainedAt;
 	}
 
 	@Override
