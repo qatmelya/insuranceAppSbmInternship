@@ -1,0 +1,26 @@
+<form action="#" th:action="@{/insurances/calculate/kasko}"
+	method="post" th:object="${customer}">
+	<label>First name:</label> <input type="text" th:field="*{firstName}" /><br />
+	<label>Last name:</label> <input type="text" th:field="*{lastName}" /><br />
+	<label>Tc:</label> <input type="text" th:field="*{tc}" /><br /> <label>Phone
+		Number:</label> <input type="text" th:field="*{phoneNumber}" /><br />
+
+	<!-- 	<label>Password:</label> <input type="password" th:field="*{password}" /><br /><label>Gender:</label> <input
+    type="radio" th:field="*{gender}" value="Male" />Male <input
+    type="radio" th:field="*{gender}" value="Female" />Female<br /> <label>Married?</label> <input type="checkbox"
+    th:field="*{married}" /><br /> <label>Note:</label>
+  <textarea rows="5" cols="25" th:field="*{note}"></textarea>
+  <br />
+     -->
+
+	<label>Birthday:</label> <input type="date" th:field="*{birthDate}" /><br />
+	<label>License Date:</label> <input type="date"
+		th:field="*{licenseObtainedAt}" /><br /> <label>Profession:</label>
+	<select th:field="*{professionId}">
+		<option th:each="p : ${professions}" th:value="${p.id}"
+			th:text="${p.name}" />
+	</select> <br /> <label>City:</label><select th:field="*{cityOfResidenceId}">
+		<option th:each="c : ${cities}" th:value="${c.id}" th:text="${c.name}" />
+	</select> <br />
+	<button type="submit">Register</button>
+</form>
