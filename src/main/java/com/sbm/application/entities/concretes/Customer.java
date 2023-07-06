@@ -1,6 +1,6 @@
 package com.sbm.application.entities.concretes;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -23,9 +23,9 @@ public class Customer extends Parameter {
 	@Column("phoneNumber")
 	private String phoneNumber;
 	@Column("birthDate")
-	private Timestamp birthDate;
+	private String birthDate;
 	@Column("licenseObtainedAt")
-	private Timestamp licenseObtainedAt;
+	private String licenseObtainedAt;
 
 	public Customer() {
 		super(0, 0, 0);
@@ -33,8 +33,8 @@ public class Customer extends Parameter {
 	}
 
 	public Customer(double valueFactor, double scaleFactor, int id, int professionId, int cityOfResidenceId,
-			String firstName, String lastName, String tc, String phoneNumber, Timestamp birthDate,
-			Timestamp licenseObtainedAt) {
+			String firstName, String lastName, String tc, String phoneNumber, String birthDate,
+			String licenseObtainedAt) {
 		super(id, scaleFactor, valueFactor);
 		this.professionId = professionId;
 		this.cityOfResidenceId = cityOfResidenceId;
@@ -94,19 +94,19 @@ public class Customer extends Parameter {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Timestamp getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Timestamp birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
-	public Timestamp getLicenseObtainedAt() {
+	public String getLicenseObtainedAt() {
 		return licenseObtainedAt;
 	}
 
-	public void setLicenseObtainedAt(Timestamp licenseObtainedAt) {
+	public void setLicenseObtainedAt(String licenseObtainedAt) {
 		this.licenseObtainedAt = licenseObtainedAt;
 	}
 
