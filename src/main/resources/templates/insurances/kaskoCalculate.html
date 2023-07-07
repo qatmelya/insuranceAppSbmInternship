@@ -2,7 +2,7 @@
 	method="post" th:object="${customer}">
 	<label>First name:</label> <input type="text" th:field="*{firstName}" /><br />
 	<label>Last name:</label> <input type="text" th:field="*{lastName}" /><br />
-	<label>Tc:</label> <input type="text" th:field="*{tc}" /><br /> <label>Phone
+	<label>Tc:</label> <input type="text" pattern="^\d{11}" th:field="*{tc}" /><br /> <label>Phone
 		Number:</label> <input type="text" pattern="^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$" th:field="*{phoneNumber}" /><br />
 
 	<!-- 	<label>Password:</label> <input type="password" th:field="*{password}" /><br /><label>Gender:</label> <input
