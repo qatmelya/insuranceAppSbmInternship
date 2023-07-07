@@ -51,13 +51,9 @@ public class InsuranceController {
 	@PostMapping("/calculate/{name}")
 	public String submitCalculate(@ModelAttribute("customer") Customer customer, @PathVariable String name,
 			Model model) {
-
-		System.out.println("Müşteri Ekleniyor");
 		customerRepository.save(customer).block();
-		System.out.println("Müşteri Eklendi");
 		model.addAttribute("controller", controllerName);
 		model.addAttribute("page", name + "Success");
-		System.out.println(name + "Success");
 		return "app";
 	}
 
